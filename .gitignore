@@ -5,6 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
+/Food Classification dataset/
 
 # Distribution / packaging
 .Python
