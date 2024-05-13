@@ -3,12 +3,12 @@ import shutil
 from sklearn.model_selection import train_test_split
 
 # Ruta de la carpeta de imágenes
-carpeta_imagenes = 'Food Classification dataset/Chicken Curry'
+carpeta_imagenes = 'Food Classification dataset/Fries'
 
 # Definir las rutas para train, test y validation
-ruta_train = 'train/Chicken Curry'
-ruta_test = 'test/Chicken Curry'
-ruta_validation = 'validation/Chicken Curry'
+ruta_train = 'train/Fries'
+ruta_test = 'test/Fries'
+ruta_validation = 'validation/Fries'
 
 # Obtener la lista de imágenes
 lista_imagenes = os.listdir(carpeta_imagenes)
