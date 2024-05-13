@@ -33,6 +33,7 @@ Las clases tienen una diferencia relevante en la cantidad de imágenes, las sigu
 * Hot Dog
 * Sandwich
 * Taco
+
 Mientras que el resto de las clases poseen 1000 imágenes, las cuales son:
 * Apple Pie
 * Cheesecake
