@@ -89,16 +89,16 @@ Esto se debe a que en los conjuntos de validación y prueba, se busca evaluar el
 
 ## :closed_book: Referencias bibliográficas
 
-* Q. Li, W. Cai, X. Wang, Y. Zhou, David Dagan Feng, and M. Chen, “Medical image classification with convolutional neural network,” Dec. 2014, doi: https://doi.org/10.1109/icarcv.2014.7064414.
+* Q. Li, W. Cai, X. Wang, Y. Zhou, D.Feng, and M. Chen, “Medical image classification with convolutional neural network,” Dec. 2014, doi: https://doi.org/10.1109/icarcv.2014.7064414.
 
-‌* Patel Dhruv and Subham Naskar, “Image Classification Using Convolutional Neural Network (CNN) and Recurrent Neural Network (RNN): A Review,” Advances in intelligent systems and computing, pp. 367–381, Jan. 2020, doi: https://doi.org/10.1007/978-981-15-1884-3_34.
+* P. ‌Dhruv and S. Naskar, “Image Classification Using Convolutional Neural Network (CNN) and Recurrent Neural Network (RNN): A Review,” Advances in intelligent systems and computing, pp. 367–381, Jan. 2020, doi: https://doi.org/10.1007/978-981-15-1884-3_34.
 
 * Y. Sun, B. Xue, M. Zhang, G. G. Yen, and Jiancheng Lv, “Automatically Designing CNN Architectures Using the Genetic Algorithm for Image Classification,” IEEE transactions on cybernetics, vol. 50, no. 9, pp. 3840–3854, Sep. 2020, doi: https://doi.org/10.1109/tcyb.2020.2983860.
 
-‌* A. Bakhshi, S. Chalup, and N. Noman, “Fast Evolution of CNN Architecture for Image Classification,” Natural computing series, pp. 209–229, Jan. 2020, doi: https://doi.org/10.1007/978-981-15-3685-4_8.
+* A. Bakhshi, S. Chalup, and N. Noman, “Fast Evolution of CNN Architecture for Image Classification,” Natural computing series, pp. 209–229, Jan. 2020, doi: https://doi.org/10.1007/978-981-15-3685-4_8.
 
-‌* Dheeb Albashish, Rizik Al-Sayyed, A. Abdullah, Mohammad Hashem Ryalat, and Nedaa Ahmad Almansour, “Deep CNN Model based on VGG16 for Breast Cancer Classification,” Jul. 2021, doi: https://doi.org/10.1109/icit52682.2021.9491631.
+* Dheeb Albashish, Rizik Al-Sayyed, A. Abdullah, Mohammad Hashem Ryalat, and Nedaa Ahmad Almansour, “Deep CNN Model based on VGG16 for Breast Cancer Classification,” Jul. 2021, doi: https://doi.org/10.1109/icit52682.2021.9491631.
 
-‌* Chiranjibi Sitaula and Mohammad Belayet Hossain, “Attention-based VGG-16 model for COVID-19 chest X-ray image classification,” Applied intelligence, vol. 51, no. 5, pp. 2850–2863, Nov. 2020, doi: https://doi.org/10.1007/s10489-020-02055-x.
+* Chiranjibi Sitaula and Mohammad Belayet Hossain, “Attention-based VGG-16 model for COVID-19 chest X-ray image classification,” Applied intelligence, vol. 51, no. 5, pp. 2850–2863, Nov. 2020, doi: https://doi.org/10.1007/s10489-020-02055-x.
 ‌
 ‌
