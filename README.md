@@ -1,9 +1,9 @@
-# tc3002b_Modulo2_IA
+# :memo: tc3002b_Modulo2_IA
 En este repositorio se alojarán todos los archivos del Módulo 2 de la materia de Desarrollo de aplicaciones avanzadas de ciencias computacionales
 
-## Food Classification
+## :dart: Food Classification
 
-### Dataset
+### :book: Dataset
 
 El conjunto de datos utilizado en este proyecto fue creado por Harish Kumar y se obtuvo del conjunto de datos de Kaggle conocido como [Food Image Classification Dataset](https://www.https://www.kaggle.com/datasets/harishkumardatalab/food-image-classification-dataset)
 
@@ -24,7 +24,7 @@ Originalmente, el conjunto de datos de Kaggle incluía 35 clases de platillos, p
 * Sushi
 * Taco
 
-### Estructura del dataset
+### :construction: Estructura del dataset
 Las clases tienen una diferencia relevante en la cantidad de imágenes, las siguientes clases poseen 1500 imágenes:
 * Baked Potato
 * Crispy Chicken
@@ -56,7 +56,7 @@ En el conjunto de datos original de Kaggle, cada clase contiene todas las imáge
 
 El conjunto original de datos no venía segmentado en las categorías previamente descritas por lo que se desarolló un archivo de python llamado "data_split.py" para hacer la división de las imágenes.
 
-### Preprocesamiento de los datos
+### :triangular_ruler: Preprocesamiento de los datos
 
 El preprocesamiento de imágenes es una fase relevante para preparar los datos antes de entrenar un modelo de clasificación de imágenes. 
 
@@ -87,4 +87,4 @@ En el archivo "model.py", se mantiene la misma arquitectura descrita anteriormen
 
 Esto se debe a que en los conjuntos de validación y prueba, se busca evaluar el rendimiento del modelo con datos "reales", es decir, imágenes que sean representativas de las condiciones que encontrará el modelo en la práctica. Por lo tanto, se evitan las transformaciones excesivas en estas imágenes, como rotaciones y zoom, para garantizar que las métricas de rendimiento reflejen con precisión la capacidad del modelo para generalizar a datos no vistos sin influencias artificiales.En otras palabras, al mantener los conjuntos de validación y prueba lo más cercanos posible a datos "reales", se obtiene una evaluación más precisa del rendimiento del modelo en situaciones del mundo real.
 
-## Referencias bibliográficas
+## :closed_book: Referencias bibliográficas
