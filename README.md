@@ -68,19 +68,23 @@ En este proyecto, se utiliza ImageDataGenerator de TensorFlow para realizar una 
 
 * **Normalización de los valores de los píxeles:** En el preprocesamiento de imágenes para modelos de aprendizaje profundo, una práctica común es escalar los valores de los píxeles de las imágenes al rango [0, 1]. Esto se logra dividiendo cada valor de píxel por 255.
 
-* **Data Augmentation (Aumento de Datos):** Data augmentatio se utiliza para incrementar la diversidad del conjunto de datos de entrenamiento mediante la aplicación de transformaciones aleatorias. En este proyecto se establecieron las siguientes transformaciones en el conjunto de entrenamiento:
+* **Data Augmentation (Aumento de Datos):** Data augmentation se utiliza para incrementar la diversidad del conjunto de datos de entrenamiento mediante la aplicación de transformaciones aleatorias. En este proyecto se establecieron las siguientes transformaciones en el conjunto de entrenamiento:
 
-  * **Rotación:** Las imágenes pueden rotar hasta 90 grados.
-  * **Desplazamiento Horizontal y Vertical (Width and height shift):** Las imágenes pueden desplazarse horizontalmente y verticalmente hasta un 20% de su tamaño.
-  * **Corte (Shear):** La transformación de corte es una operación geométrica que distorsiona la forma de una imagen. La transformación de corte puede variar aleatoriamente hasta un máximo de aproximadamente 0.2 radianes(11.46 grados).
+  * **Rotation (Rotación):** Las imágenes pueden rotar hasta 90 grados.
+  * **Width and height shift (Desplazamiento Horizontal y Vertical) :** Las imágenes pueden desplazarse horizontalmente y verticalmente hasta un 20% de su tamaño.
+  * **Shear (Corte):** La transformación de corte es una operación geométrica que distorsiona la forma de una imagen. La transformación de corte puede variar aleatoriamente hasta un máximo de aproximadamente 0.2 radianes(11.46 grados).
   * **Zoom:** Las imágenes pueden ser ampliadas hasta un 20%.
-  * **Volteo Horizontal (horizontal flip):** Las imágenes pueden ser volteadas horizontalmente.
+  * **Horizontal flip (volteo Horizontal):** Las imágenes pueden ser volteadas horizontalmente.
+  * **Class mode (modo de clase):** Este parámetro especifica el formato de las etiquetas que se generarán para los datos. Este parámetro es crucial para determinar cómo se estructuran las etiquetas de salida de las imágenes cargadas y se utiliza para adaptar la forma de las etiquetas a la arquitectura del modelo.En este caso, debido a que el modelo tiene el propósito de clasificar diversas clases, es estableció el parámetro de categorical.
 
-* **Generador de Datos:** ImageDataGenerator genera lotes de datos de imágenes con un tamaño de 64 imágenes por lote (valor definido en el código).
+* **Generador de Datos:** ImageDataGenerator genera lotes de datos de imágenes con un tamaño de 64 imágenes por lote (valor definido en el código). Cabe resaltar que para fines didácticos en el archivo "model_preprocess.py" se desarrolla una estructura donde se guarda ejemplos de imágenes aumentadas en la carpeta "augmented" con el prefijo aug y en formato PNG.
 
-Cabe resaltar que para fines didácticos en el archivo "model_preprocess.py" se desarrolla una estructura donde se guarda ejemplos de imágenes aumentadas en la carpeta "augmented" con el prefijo aug y en formato PNG.
-
-A su vez, en el mismo archivo hay una estructura para imprimir alrededor de 20 imágenes usando librerías de python como numpy y matplotlib en caso de que no se quiera guardar las imágenes en el dispositivo que se ejecute el código.
+A su vez, en el mismo archivo hay una estructura para imprimir alrededor de 20 imágenes, usando librerías de python como numpy y matplotlib, en caso de que no se quiera guardar las imágenes en el dispositivo que se ejecute el código. A continuación se muestra un ejemplo de la imagen que se genera.
 
 ![preprocessExample](images/preprocessing_example.png)
 
+En el archivo "model.py", se mantiene la misma arquitectura descrita anteriormente para el preprocesamiento de las imágenes de entrenamiento. Sin embargo, se ha agregado un preprocesamiento similar para los conjuntos de validación y prueba. Es importante destacar que estos preprocesamientos adicionales contienen una arquitectura simplificada que conserva únicamente las etapas de redimensionamiento y normalización, así como la configuración del modo de clase.
+
+Esto se debe a que en los conjuntos de validación y prueba, se busca evaluar el rendimiento del modelo con datos "reales", es decir, imágenes que sean representativas de las condiciones que encontrará el modelo en la práctica. Por lo tanto, se evitan las transformaciones excesivas en estas imágenes, como rotaciones y zoom, para garantizar que las métricas de rendimiento reflejen con precisión la capacidad del modelo para generalizar a datos no vistos sin influencias artificiales.En otras palabras, al mantener los conjuntos de validación y prueba lo más cercanos posible a datos "reales", se obtiene una evaluación más precisa del rendimiento del modelo en situaciones del mundo real.
+
+## Referencias bibliográficas

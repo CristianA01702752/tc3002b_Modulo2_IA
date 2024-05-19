@@ -1,13 +1,16 @@
+#Librerías
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
+#variables globales
 train_path = 'train'
-validation_path = 'validation'
-test_path = 'test'
 augmented_path = 'augmented'
+width, height = 150, 150
+batch_size = 64
 
+#Preprocesamiento del conjunto de entrenamiento
 train_datagen = ImageDataGenerator(
 							rescale = 1./255,
 							rotation_range = 90,
@@ -19,13 +22,13 @@ train_datagen = ImageDataGenerator(
 
 train_generator = train_datagen.flow_from_directory(
 							train_path,
-							target_size = (150, 150),
-							batch_size = 64,
+							target_size = (width, height),
+							batch_size = batch_size,
 							class_mode ='categorical',
                         	save_to_dir= augmented_path,
               				save_prefix='aug',
               				save_format='png')
-
+#Etiquetas de las clases
 classes = {
     0: 'Apple Pie',
     1: 'Baked Potato',
@@ -41,6 +44,7 @@ classes = {
     11: 'Sushi',
     12: 'Taco',
 }
+#Impresión de una muestra de las imágenes generadas en el preprocesamiento
 images, labels = train_generator[0]
 num_imgs = min(images.shape[0], 20)
 fig, axarr = plt.subplots(2, 10, figsize=(5, 5))
