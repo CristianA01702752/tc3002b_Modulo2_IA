@@ -5,7 +5,7 @@ En este repositorio se alojarán todos los archivos del Módulo 2 de la materia 
 
 ### :book: Dataset
 
-El conjunto de datos utilizado en este proyecto fue creado por Harish Kumar y se obtuvo del conjunto de datos de Kaggle conocido como [Food Image Classification Dataset](https://www.https://www.kaggle.com/datasets/harishkumardatalab/food-image-classification-dataset)
+El conjunto de datos utilizado en este proyecto fue creado por Harish Kumar y se obtuvo del conjunto de datos de Kaggle conocido como [Food Image Classification Dataset](https://www.kaggle.com/datasets/harishkumardatalab/food-image-classification-dataset)
 
 El objetivo principal de este modelo es clasificar 13 categorías diferentes de platillos de comida.
 
