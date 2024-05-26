@@ -133,9 +133,9 @@ El proceso de entrenamiento del modelo implica ajustar los pesos del modelo util
 
   * **validation_steps:** Similar a steps_per_epoch, este parámetro define el número de pasos de validación que el modelo ejecutará al final de cada época. Cada paso de validación procesa un lote de datos de validación para evaluar el rendimiento del modelo. En este caso, 30 pasos de validación se ejecutan al final de cada época.
 
-<p align="center">
-  ![modelFit](images/model_fit.jpg)
-</p>
+
+  ![modelFit](images/model_fit.jpg#center)
+
 
 ## :closed_book: Referencias bibliográficas
 
