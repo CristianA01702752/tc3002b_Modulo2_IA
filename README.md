@@ -85,17 +85,18 @@ En este proyecto se ha construidos un modelo de Red Neuronal Convolucional (CNN)
 
   * **Modelo Base:** Se implementó la arquitectura VGG16 como nuestro modelo base. VGG16 es una arquitectura de red neuronal convolucional (CNN) que ha sido ampliamente utilizada en el campo del aprendizaje profundo. Fue desarrollada por el grupo Visual Geometry Group (VGG) en la Universidad de Oxford y es conocida por su profundidad y su capacidad para aprender representaciones de características de imágenes.
 
-  La arquitectura VGG16 se caracteriza por tener 16 capas de pesos, incluyendo 13 capas convolucionales y 3 capas completamente conectadas. Utiliza convoluciones 3x3 con un paso y un relleno (padding) de 1, y max-pooling 2x2 para reducir la dimensionalidad espacial. VGG16 se ha utilizado principalmente para tareas de clasificación de imágenes, como el reconocimiento de objetos en imágenes y la identificación de categorías.[3]
+    La arquitectura VGG16 se caracteriza por tener 16 capas de pesos, incluyendo 13 capas convolucionales y 3 capas completamente conectadas. Utiliza convoluciones 3x3 con un paso y un relleno (padding) de 1, y max-pooling 2x2 para reducir la dimensionalidad espacial. VGG16 se ha utilizado principalmente para tareas de clasificación de imágenes, como el reconocimiento de objetos en imágenes y la identificación de categorías.[3]
 
-  Dicha arquitectura viene preentrenada con el conjunto de datos "ImageNet". En adición a esto, otro parámetro configurado dentro de esta capa es "include_top=False", lo cual significa que excluimos las capas densas finales del modelo base, permitiéndonos añadir nuestras propias capas personalizadas para adaptar el modelo a nuestras necesidades. Además, definimos la forma de entrada con "input_shape=(width, height, 3)" para que coincida con las dimensiones de nuestras imágenes.
+    Dicha arquitectura viene preentrenada con el conjunto de datos "ImageNet". En adición a esto, otro parámetro configurado dentro de esta capa es "include_top=False", lo cual significa que excluimos las capas densas finales del modelo base, permitiéndonos añadir nuestras propias capas personalizadas para adaptar el modelo a nuestras necesidades. Además, definimos la forma de entrada con "input_shape=(width, height, 3)" para que coincida con las dimensiones de nuestras imágenes.
 
-  Por último, establecemos conv_base.trainable = True para permitir que los pesos del modelo base se actualicen durante el entrenamiento, lo que puede mejorar el rendimiento al ajustarse a las imágenes del proyecto.
+    Por último, establecemos conv_base.trainable = True para permitir que los pesos del modelo base se actualicen durante el entrenamiento, lo que puede mejorar el rendimiento al ajustarse a las imágenes del proyecto.
 
   * **Capa Global Average Pooling:** Posteriormente, agregamos una capa de Global Average Pooling 2D para reducir la dimensionalidad de las características extraídas y generar una representación compacta de la información visual. Esta capa promedia espacialmente las características en cada canal, produciendo una representación más manejable y reduciendo el riesgo de sobreajuste.
 
   * **Capas Densas Adicionales:** Por último, añadimos capas densas adicionales para la clasificación. Comenzamos con una capa densa con 256 unidades y función de activación ReLU, que ayuda a aprender representaciones no lineales en los datos. Esta capa permite al modelo capturar patrones complejos en las características visuales extraídas por VGG16. 
 
-  Finalmente, agregamos una capa densa de salida con 13 unidades y función de activación softmax. Esta capa produce una distribución de probabilidad sobre las clases objetivo, permitiendo la clasificación de las entradas en una de las 13 categorías posibles.
+    Finalmente, agregamos una capa densa de salida con 13 unidades y función de activación softmax. Esta capa produce una distribución de probabilidad sobre las clases objetivo, permitiendo la clasificación de las entradas en una de las 13 categorías posibles.
+
 ![modelSummary](images/model_structure.jpg)
 
 ### :triangular_flag_on_post: Compilación del modelo
@@ -104,7 +105,7 @@ Una vez que hemos definido la arquitectura del modelo, el siguiente paso crucial
 
   * **Función de Pérdida:** La función de pérdida seleccionada es categorical_crossentropy[4]. Esta función de pérdida es adecuada para problemas de clasificación multiclase, donde las etiquetas de las clases están codificadas de manera categórica (one-hot encoding). 
 
-  Categorical_crossentropy calcula la diferencia entre la distribución de probabilidad predicha por el modelo y la distribución de probabilidad real de las clases.
+    Categorical_crossentropy calcula la diferencia entre la distribución de probabilidad predicha por el modelo y la distribución de probabilidad real de las clases.
 
   * **Optimizador:** El optimizador elegido es Adam[4], que es una versión avanzada del descenso de gradiente estocástico. Adam (Adaptive Moment Estimation) combina las ventajas de dos otros métodos de optimización populares: AdaGrad y RMSProp. Utiliza momentos adaptativos de primer y segundo orden, lo que permite ajustes individuales de la tasa de aprendizaje para cada parámetro del modelo. Dentro del optimizador, definimos el hiperparámetro de "learning rate".
 
@@ -132,7 +133,9 @@ El proceso de entrenamiento del modelo implica ajustar los pesos del modelo util
 
   * **validation_steps:** Similar a steps_per_epoch, este parámetro define el número de pasos de validación que el modelo ejecutará al final de cada época. Cada paso de validación procesa un lote de datos de validación para evaluar el rendimiento del modelo. En este caso, 30 pasos de validación se ejecutan al final de cada época.
 
-![modelFit](images/model_fit.jpg)
+<p align="center">
+  ![modelFit](images/model_fit.jpg)
+</p>
 
 ## :closed_book: Referencias bibliográficas
 
