@@ -133,15 +133,17 @@ El proceso de entrenamiento del modelo implica ajustar los pesos del modelo util
 
   * **validation_steps:** Similar a steps_per_epoch, este parámetro define el número de pasos de validación que el modelo ejecutará al final de cada época. Cada paso de validación procesa un lote de datos de validación para evaluar el rendimiento del modelo. En este caso, 30 pasos de validación se ejecutan al final de cada época.
 
-        ![modelFit](images/model_fit.jpg)
+ ![modelFit](images/model_fit.jpg)
 
 ### :mag_right: Análisis de los resultados de la primera iteración
 
 Al evaluar el rendimiento del modelo, es fundamental observar tanto las métricas de entrenamiento como las de validación para comprender cómo está aprendiendo el modelo y si está generalizando bien a datos no vistos. A continuación se presentan las métricas obtenidas:
 
   ![modelResults](images/final_epoch_results.jpg)
-  ![accuracyGraph](images/accuracy_graph.jpg)
-  ![lossGraph](images/loss_graph.jpg)
+  
+  ![accuracyGraph](images/accuracy_graph.png)
+  
+  ![lossGraph](images/loss_graph.png)
 
   * Train Accuracy (Exactitud de Entrenamiento): 64.58%
   * Train Loss (Pérdida de Entrenamiento): 1.0983
@@ -203,7 +205,7 @@ Para confirmar la capacidad de generalización del modelo, evaluamos su rendimie
 
 ## Matriz de Confusión
 
-![confMatrix](images/classification_report.jpg)
+![confMatrix](images/confusion_matrix.png)
 
 * Apple Pie:
   * Prediciones correctas: 45
