@@ -87,7 +87,7 @@ En este proyecto se ha construido un modelo de Red Neuronal Convolucional (CNN) 
 
     La arquitectura VGG16 se caracteriza por tener 16 capas de pesos, incluyendo 13 capas convolucionales y 3 capas completamente conectadas. Utiliza convoluciones 3x3 con un paso y un relleno (padding) de 1, y max-pooling 2x2 para reducir la dimensionalidad espacial. VGG16 se ha utilizado principalmente para tareas de clasificación de imágenes, como el reconocimiento de objetos en imágenes y la identificación de categorías.[3]
 
-    Dicha arquitectura viene preentrenada con el conjunto de datos "ImageNet". En adición a esto, otro parámetro configurado dentro de esta capa es "include_top=False", lo cual significa que excluimos las capas densas finales del modelo base, permitiéndonos añadir nuestras propias capas personalizadas para adaptar el modelo a nuestras necesidades. Además, definimos la forma de entrada con "input_shape=(width, height, 3)" para que coincida con las dimensiones de nuestras imágenes.
+    Dicha arquitectura viene preentrenada con el conjunto de datos "ImageNet". En adición a esto, otro parámetro configurado dentro de esta capa es "include_top=False", lo cuál significa que excluimos las capas densas finales del modelo base, permitiéndonos añadir nuestras propias capas personalizadas para adaptar el modelo a nuestras necesidades. Además, definimos la forma de entrada con "input_shape=(width, height, 3)" para que coincida con las dimensiones de nuestras imágenes.
 
     Por último, establecemos conv_base.trainable = True para permitir que los pesos del modelo base se actualicen durante el entrenamiento, lo que puede mejorar el rendimiento al ajustarse a las imágenes del proyecto.
 
@@ -311,7 +311,7 @@ A continuación se presentan las métricas obtenidas:
   
   A su vez, la reducción en la pérdida sugiere que el modelo está optimizando de manera más efectiva los parámetros internos para ajustarse a los datos.
 
-  Asimismo, las métricas de entrenamiento y validación del modelo refinado no poseen tanta diferencia, lo cual indica que este modelo mantiene su rendimiento en datos no vistos y tampoco se está sobreajustando a los datos de entrenamiento.
+  Asimismo, las métricas de entrenamiento y validación del modelo refinado no poseen tanta diferencia, lo cuál indica que este modelo mantiene su rendimiento en datos no vistos y tampoco se está sobreajustando a los datos de entrenamiento.
   
 Ahora se analizarán los resultados obtenidos en la fase de prueba:
 
@@ -329,138 +329,138 @@ Ahora se analizarán los resultados obtenidos en la fase de prueba:
 ![classRefReport](images/classification_report_refinement.jpg)
 
 * **Apple Pie**
- * Modelo Inicial:
-  - Precisión: 0.62
-  - Recall: 0.30
-  - F1-Score: 0.40
- * Modelo Refinado:
-  - Precisión: 0.51
-  - Recall: 0.75
-  - F1-Score: 0.61
+  * Modelo Inicial:
+    * Precisión: 0.62
+    * Recall: 0.30
+    * F1-Score: 0.40
+  * Modelo Refinado:
+    * Precisión: 0.51
+    * Recall: 0.75
+    * F1-Score: 0.61
 
 * **Baked Potato**
- * Modelo Inicial:
-  - Precisión: 0.97
-  - Recall: 0.49
-  - F1-Score: 0.65
+  * Modelo Inicial:
+    * Precisión: 0.97
+    * Recall: 0.49
+    * F1-Score: 0.65
  * Modelo Refinado:
-  - Precisión: 0.84
-  - Recall: 0.78
-  - F1-Score: 0.81
+    * Precisión: 0.84
+    * Recall: 0.78
+    * F1-Score: 0.81
 
-* Cheesecake
- * Modelo Inicial:
-  - Precisión: 0.84
-  - Recall: 0.44
-  - F1-Score: 0.58
+* **Cheesecake**
+  * Modelo Inicial:
+    * Precisión: 0.84
+    * Recall: 0.44
+    * F1-Score: 0.58
  * Modelo Refinado:
-  - Precisión: 0.95
-  - Recall: 0.42
-  - F1-Score: 0.58
+    * Precisión: 0.95
+    * Recall: 0.42
+    * F1-Score: 0.58
 
-* Chicken Curry
- * Modelo Inicial:
-  - Precisión: 0.92
-  - Recall: 0.55
-  - F1-Score: 0.69
- * Modelo Refinado:
-  - Precisión: 0.85
-  - Recall: 0.67
-  - F1-Score: 0.75
+* **Chicken Curry**
+  * Modelo Inicial:
+    * Precisión: 0.92
+    * Recall: 0.55
+    * F1-Score: 0.69
+  * Modelo Refinado:
+    * Precisión: 0.85
+    * Recall: 0.67
+    * F1-Score: 0.75
 
-* Crispy Chicken
- * Modelo Inicial:
-  - Precisión: 0.63
-  - Recall: 0.82
-  - F1-Score: 0.71
- * Modelo Refinado:
-  - Precisión: 0.56
-  - Recall: 0.95
-  - F1-Score: 0.70
+* **Crispy Chicken**
+  * Modelo Inicial:
+    * Precisión: 0.63
+    * Recall: 0.82
+    * F1-Score: 0.71
+  * Modelo Refinado:
+    * Precisión: 0.56
+    * Recall: 0.95
+    * F1-Score: 0.70
 
-* Donut
- * Modelo Inicial:
-  - Precisión: 0.81
-  - Recall: 0.86
-  - F1-Score: 0.84
- * Modelo Refinado:
-  - Precisión: 0.84
-  - Recall: 0.92
-  - F1-Score: 0.88
+* **Donut**
+  * Modelo Inicial:
+    * Precisión: 0.81
+    * Recall: 0.86
+    * F1-Score: 0.84
+  * Modelo Refinado:
+    * Precisión: 0.84
+    * Recall: 0.92
+    * F1-Score: 0.88
 
-* Fries
- * Modelo Inicial:
-  - Precisión: 0.87
-  - Recall: 0.82
-  - F1-Score: 0.85
- * Modelo Refinado:
-  - Precisión: 0.87
-  - Recall: 0.86
-  - F1-Score: 0.86
+* **Fries**
+  * Modelo Inicial:
+    * Precisión: 0.87
+    * Recall: 0.82
+    * F1-Score: 0.85
+  * Modelo Refinado:
+    * Precisión: 0.87
+    * Recall: 0.86
+    * F1-Score: 0.86
 
-* Hot Dog
- * Modelo Inicial:
-  - Precisión: 0.92
-  - Recall: 0.42
-  - F1-Score: 0.58
- * Modelo Refinado:
-  - Precisión: 0.92
-  - Recall: 0.70
-  - F1-Score: 0.79
+* **Hot Dog**
+  * Modelo Inicial:
+    * Precisión: 0.92
+    * Recall: 0.42
+    * F1-Score: 0.58
+  * Modelo Refinado:
+    * Precisión: 0.92
+    * Recall: 0.70
+    * F1-Score: 0.79
 
-* Ice Cream
- * Modelo Inicial:
-  - Precisión: 0.51
-  - Recall: 0.52
-  - F1-Score: 0.52
- * Modelo Refinado:
-  - Precisión: 0.66
-  - Recall: 0.58
-  - F1-Score: 0.62
+* **Ice Cream**
+  * Modelo Inicial:
+    * Precisión: 0.51
+    * Recall: 0.52
+    * F1-Score: 0.52
+  * Modelo Refinado:
+    * Precisión: 0.66
+    * Recall: 0.58
+    * F1-Score: 0.62
 
-* Omelette
- * Modelo Inicial:
-  - Precisión: 0.46
-  - Recall: 0.61
-  - F1-Score: 0.52
- * Modelo Refinado:
-  - Precisión: 0.68
-  - Recall: 0.67
-  - F1-Score: 0.68
+* **Omelette**
+  * Modelo Inicial:
+    * Precisión: 0.46
+    * Recall: 0.61
+    * F1-Score: 0.52
+  * Modelo Refinado:
+    * Precisión: 0.68
+    * Recall: 0.67
+    * F1-Score: 0.68
 
-* Sandwich
- * Modelo Inicial:
-  - Precisión: 0.45
-  - Recall: 0.86
-  - F1-Score: 0.59
- * Modelo Refinado:
-  - Precisión: 0.81
-  - Recall: 0.79
-  - F1-Score: 0.80
+* **Sandwich**
+  * Modelo Inicial:
+    * Precisión: 0.45
+    * Recall: 0.86
+    * F1-Score: 0.59
+  * Modelo Refinado:
+    * Precisión: 0.81
+    * Recall: 0.79
+    * F1-Score: 0.80
 
-* Sushi
- * Modelo Inicial:
-  - Precisión: 0.54
-  - Recall: 0.76
-  - F1-Score: 0.63
- * Modelo Refinado:
-  - Precisión: 0.78
-  - Recall: 0.78
-  - F1-Score: 0.78
+* **Sushi**
+  * Modelo Inicial:
+    * Precisión: 0.54
+    * Recall: 0.76
+    * F1-Score: 0.63
+  * Modelo Refinado:
+    * Precisión: 0.78
+    * Recall: 0.78
+    * F1-Score: 0.78
 
-* Taco
- * Modelo Inicial:
-  - Precisión: 0.50
-  - Recall: 0.63
-  - F1-Score: 0.56
- * Modelo Refinado:
-  - Precisión: 0.64
-  - Recall: 0.68
-  - F1-Score: 0.66
+* **Taco**
+  * Modelo Inicial:
+    * Precisión: 0.50
+    * Recall: 0.63
+    * F1-Score: 0.56
+  * Modelo Refinado:
+    * Precisión: 0.64
+    * Recall: 0.68
+    * F1-Score: 0.66
 
-### Matriz de Confusión
+### Matriz de Confusión del modelo refinado
 
-![confMatrix](images/confusion_matrix.png)
+![confRefMatrix](images/confusion_matrix_refinement.png)
 
 * Apple Pie:
   * Modelo inicial:
@@ -565,6 +565,22 @@ Ahora se analizarán los resultados obtenidos en la fase de prueba:
   * Modelo refinado:
     * Prediciones correctas: 152
     * Clasificaciones erróneas: Confundido frecuentemente con "Crispy Chicken" (41) y "Baked Potato" (10).
+
+## :bulb: Demostración del rendimiento de los modelos.
+
+En esta última sección, se decidió evaluar el modelo utilizando diversas imágenes de diferentes clases de comida obtenidas de internet, y comparar el rendimiento con dichas imágenes.
+
+Para ello, se desarrolló un script llamado "Test_Food_Model.ipynb". En este script, se cargaron los modelos guardados en formato ".keras" junto con las imágenes correspondientes. Las imágenes se imprimieron junto con las predicciones hechas por los modelos y sus categorías originales.
+
+### Modelo 1 
+
+![ModelTest](images/test_examples_first.png)
+
+### Modelo Refinado
+
+![ModelRefTest](images/test_examples_ref.png)
+
+Como se puede observar en las imágenes de los resultados, ambos modelos presentan un rendimiento similar. Sin embargo, el primer modelo cometió errores en la clasificación de "Apple Pie", "Ice Cream" y "Sushi". Estos errores no ocurrieron con el modelo refinado, aunque este último mantiene otros errores similares al primer modelo, como en la clasificación de "Chicken Curry" y algunas imágenes de "Cheesecake".
 
 ## Conclusiones de la segunda iteración
 
