@@ -44,7 +44,7 @@ En el conjunto original de Kaggle, cada clase contiene imágenes sin una estruct
 
 El conjunto original de datos no venía segmentado en las categorías previamente descritas por lo que se desarolló un archivo de python llamado "data_split.py" para hacer la división de las imágenes.
 
-### :triangular_ruler: Preprocesamiento de los datos
+## :triangular_ruler: Preprocesamiento de los datos
 
 El preprocesamiento de imágenes es una fase relevante para preparar los datos antes de entrenar un modelo de clasificación de imágenes. 
 
@@ -79,9 +79,9 @@ Esto se debe a que en los conjuntos de validación y prueba, se busca evaluar el
 Por lo tanto, se evitan las transformaciones excesivas en estas imágenes, como rotaciones y zoom, para garantizar que las métricas de rendimiento reflejen con precisión la capacidad del modelo para generalizar a datos no vistos sin influencias artificiales. 
 En otras palabras, al mantener los conjuntos de validación y prueba lo más cercanos posible a datos "reales", se obtiene una evaluación más precisa del rendimiento del modelo en situaciones del mundo real.
 
-### :construction: Construcción del Modelo
+## :construction: Construcción del Modelo
 
-En este proyecto se ha construidos un modelo de Red Neuronal Convolucional (CNN) utilizando el framework de Tensorflow (versión 2.13.0) y la librería keras (versión 2.13.1). Las capas del modelo son las siguientes y fueron inspiradas por los modelos desarrollados en los artículos [3] y [4]:
+En este proyecto se ha construido un modelo de Red Neuronal Convolucional (CNN) utilizando el framework de Tensorflow (versión 2.13.0) y la librería keras (versión 2.13.1). Las capas del modelo son las siguientes y fueron inspiradas por los modelos desarrollados en los artículos [3] y [4]:
 
   * **Modelo Base:** Se implementó la arquitectura VGG16 como nuestro modelo base. VGG16 es una arquitectura de red neuronal convolucional (CNN) que ha sido ampliamente utilizada en el campo del aprendizaje profundo. Fue desarrollada por el grupo Visual Geometry Group (VGG) en la Universidad de Oxford y es conocida por su profundidad y su capacidad para aprender representaciones de características de imágenes.
 
@@ -99,7 +99,7 @@ En este proyecto se ha construidos un modelo de Red Neuronal Convolucional (CNN)
 
 ![modelSummary](images/model_structure.jpg)
 
-### :triangular_flag_on_post: Compilación del modelo
+## :triangular_flag_on_post: Compilación del modelo
 
 Una vez que hemos definido la arquitectura del modelo, el siguiente paso crucial es compilarlo. La compilación del modelo implica especificar tres elementos clave: la función de pérdida, el optimizador y las métricas de evaluación. Estos componentes determinan cómo se entrenará el modelo y cómo se evaluará su rendimiento durante y después del entrenamiento.
 
@@ -117,7 +117,7 @@ Una vez que hemos definido la arquitectura del modelo, el siguiente paso crucial
 
 ![modelCompile](images/model_compile.jpg)
 
-### :hotsprings: Entrenamiento del modelo
+## :hotsprings: Entrenamiento del modelo
 
 El proceso de entrenamiento del modelo implica ajustar los pesos del modelo utilizando datos de entrenamiento, con el objetivo de minimizar la función de pérdida y mejorar el rendimiento del modelo en términos de la métrica especificada. En este caso, utilizamos la función "fit" de Keras para entrenar el modelo con los datos de entrenamiento y validación.
 
@@ -135,7 +135,7 @@ El proceso de entrenamiento del modelo implica ajustar los pesos del modelo util
 
  ![modelFit](images/model_fit.jpg)
 
-### :mag_right: Análisis de los resultados de la primera iteración
+## :mag_right: Análisis de los resultados de la primera iteración
 
 Al evaluar el rendimiento del modelo, es fundamental observar tanto las métricas de entrenamiento como las de validación para comprender cómo está aprendiendo el modelo y si está generalizando bien a datos no vistos. A continuación se presentan las métricas obtenidas:
 
@@ -167,13 +167,13 @@ Para confirmar la capacidad de generalización del modelo, evaluamos su rendimie
   * Test Accuracy (Exactitud de Prueba): 63.82%
   * Test Loss (Pérdida de Prueba): 1.1236
 
-  La exactitud de pruebas muestra que el modelo clasifica correctamente el 64.79% de los ejemplos en el conjunto de datos de pruebas.
+  La exactitud muestra que el modelo clasifica correctamente el 64.79% de los ejemplos en el conjunto de datos de prueba.
   
   Aunque es ligeramente inferior a la exactitud de validación, la diferencia no es significativa, lo que sugiere que el modelo mantiene su rendimiento en datos no vistos.
 
   De igual forma, la pérdida de prueba es un poco mayor que la pérdida de validación, pero la diferencia no es sustancial. Esto indica que el modelo tiene un rendimiento estable y consistente también en el conjunto de datos de prueba.
 
-## Reporte de clasificación
+### Reporte de clasificación
 
 ![classReport](images/classification_report.jpg)
 
@@ -203,63 +203,63 @@ Para confirmar la capacidad de generalización del modelo, evaluamos su rendimie
 
 * Taco: Moderada precisión (0.50) y sensibilidad(recall) (0.63), indicando un rendimiento aceptable, aunque aún puede mejorar.
 
-## Matriz de Confusión
+### Matriz de Confusión
 
 ![confMatrix](images/confusion_matrix.png)
 
 * Apple Pie:
   * Prediciones correctas: 45
-  * Clasificaciones incorrectas frecuentes: Confundido frecuentemente con "Cheesecake" (13) y "French Fries" (14).
+  * Clasificaciones erróneas: Confundido frecuentemente con "Omelette" (44) y "Sandwich" (15).
 
 * Baked Potato:
   * Prediciones correctas: 111
-  * Clasificaciones incorrectas frecuentes: Confundido con "Crispy Chicken" (31) y "Hot Dog" (44).
+  * Clasificaciones erróneas: Confundido con "Crispy Chicken" (31) y "Taco" (43).
 
 * Cheesecake:
-  * Prediciones correctas: 1
-  * Clasificaciones incorrectas frecuentes: Confundido significativamente con "Apple Pie" (66).
+  * Prediciones correctas: 66
+  * Clasificaciones erróneas: Confundido con "Ice Cream" (28) y "Sushi" (24).
 
 * Chicken Curry:
-  * Prediciones correctas: 124
-  * Clasificaciones incorrectas frecuentes: Confundido con "Crispy Chicken" (82) y "Donut" (14).
+  * Prediciones correctas: 82
+  * Clasificaciones erróneas: Confundido con "Omelette" (21) y "Crispy Chicken" (14).
 
 * Crispy Chicken:
   * Prediciones correctas: 185
-  * Clasificaciones incorrectas frecuentes: Confundido con "Chicken Curry" (82) y "French Fries" (14).
+  * Clasificaciones erróneas: Confundido con "Sandwich" (16) y "Taco" (11).
 
 * Donut:
-  * Prediciones correctas: 98
-  * Clasificaciones incorrectas frecuentes: Confundido con "Hot Dog" (60) y "French Fries" (14).
+  * Prediciones correctas: 193
+  * Clasificaciones erróneas: Confundido con "Sandwich" (5) y "Sushi" (6).
 
 * French Fries:
-  * Prediciones correctas: 78
-  * Clasificaciones incorrectas frecuentes: Confundido con "Donut" (60) y "Hot Dog" (91).
+  * Prediciones correctas: 185
+  * Clasificaciones erróneas: Confundido con "Sandwich" (19) y "Taco" (7).
 
 * Hot Dog:
-  * Prediciones correctas: 0
-  * Clasificaciones incorrectas frecuentes: Confundido con "Omelette" (91) y "French Fries" (78).
+  * Prediciones correctas: 98
+  * Clasificaciones erróneas: Confundido con "Sandwich" (60) y "Taco" (38).
 
 * Ice Cream:
-  * Prediciones correctas: 5
-  * Clasificaciones incorrectas frecuentes: Confundido con "Omelette" (114) y "French Fries" (14).
+  * Prediciones correctas: 78
+  * Clasificaciones erróneas: Confundido con "Omelette" (14) y "Sushi" (21).
 
 * Omelette:
-  * Prediciones correctas: 4
-  * Clasificaciones incorrectas frecuentes: Confundido con "Hot Dog" (91) y "French Fries" (14).
+  * Prediciones correctas: 91
+  * Clasificaciones erróneas: Confundido con "Sandwich" (13) y "Crispy Chicken" (16).
 
 * Sandwich:
-  * Prediciones correctas: 6
-  * Clasificaciones incorrectas frecuentes: Confundido con "Hot Dog" (193) y "French Fries" (114).
+  * Prediciones correctas: 194
+  * Clasificaciones erróneas: Confundido con "Taco" (11) y "Sushi" (4).
 
 * Sushi:
-  * Prediciones correctas: 4
-  * Clasificaciones incorrectas frecuentes: Confundido con "Apple Pie" (19) y "Cheesecake" (114).
+  * Prediciones correctas: 114
+  * Clasificaciones erróneas: Confundido con "Taco" (5) y "Sandwich" (11).
 
 * Taco:
-  * Prediciones correctas: 6
-  * Clasificaciones incorrectas frecuentes: Confundido con "Sandwich" (185) y "Omelette" (114).    
+  * Prediciones correctas: 142
+  * Clasificaciones erróneas: Confundido con "Sandwich" (50) y "Sushi" (10).    
 
-### Conclusiones de la primera iteración
+## Conclusiones de la primera iteración
 
 Las métricas obtenidas muestran que el modelo está aprendiendo de manera constante y a un ritmo adecuado. 
 
@@ -270,6 +270,310 @@ Sin embargo, una exactitud en el rango del 64%, las métricas del reporte de cla
 
 El modelo está funcionando de manera razonablemente buena, pero con ajustes y mejoras adicionales, se puede aspirar a un rendimiento más alto.
 
+## :chart_with_upwards_trend: Refinamiento del Modelo, en búsqueda de mejoras.
+
+En esta fase se usa la misma estructura para el preprocesamiento de datos, data augmentation y generación de datos.
+
+De igual forma, se usa como base la arquitectura del modelo descrito anteriormente. No obstante, con el objetivo de mejorar el rendimiento del modelo en la clasificación de las clases, se implementaron los siguientes cambios:
+
+* **Capa de Flatten:** Usando como inspiración la aqruitectura implementada en el artículo [4], se implementó una capa de flatten que en la primera iteración de este modelo fue omitida por cuestiones del tiempo de entrenamiento del modelo.
+
+* **Capa Densa Adicional:** Añadimos una capa densa con 512 neuronas y función de activación ReLU para capturar representaciones complejas de los datos.
+
+* **Learning Rate:** Se modificó el learning rate de 0.0001 a 0.00001.
+
+* **Steps per Epoch:** Se aumentó el número de 30 a 50 para proporcionar más iteraciones en cada época, mejorando la exposición del modelo a los datos de entrenamiento.
+
+![modelRefSummary](images/model_structure_refinement.jpg)
+
+## :mag_right: Análisis de los resultados de la segunda iteración
+
+A continuación se presentan las métricas obtenidas:
+
+  ![modelRefResults](images/final_epoch_results_refinement.jpg)
+  
+  ![accuracyRefGraph](images/accuracy_graph_refinement.png)
+  
+  ![lossRefGraph](images/loss_graph_refinement.png)
+
+  * Train Accuracy (Exactitud de Entrenamiento): 72.75%
+  * Train Loss (Pérdida de Entrenamiento): 0.8230
+  * Validation Accuracy (Exactitud de Validación): 73.75%
+  * Validation Loss (Pérdida de Validación): 0.8541
+
+  La exactitud de entrenamiento ha mejorado significativamente, pasando de 64.58% a 72.75%, indicando que el modelo es ahora más capaz de clasificar correctamente los ejemplos en el conjunto de datos de entrenamiento.
+
+  La pérdida de entrenamiento ha disminuido notablemente, pasando de 1.0983 a 0.8230, lo que sugiere que el modelo refinado tiene un mejor ajuste y está aprendiendo con mayor efectividad durante el entrenamiento.
+
+  El mismo patrón sucede con las métricas de validación, donde la exactitud pasó de 64.79% a 73.75% y la pérdida pasó de 1.1019 a 0.8541.
+
+  Estos valores indican que el modelo refinado tiene una mejora significativa en la capacidad del modelo para aprender patrones y características relevantes de las clases de comida. 
+  
+  A su vez, la reducción en la pérdida sugiere que el modelo está optimizando de manera más efectiva los parámetros internos para ajustarse a los datos.
+
+  Asimismo, las métricas de entrenamiento y validación del modelo refinado no poseen tanta diferencia, lo cual indica que este modelo mantiene su rendimiento en datos no vistos y tampoco se está sobreajustando a los datos de entrenamiento.
+  
+Ahora se analizarán los resultados obtenidos en la fase de prueba:
+
+  ![testRefResults](images/test_results_refinement.jpg)
+
+  * Test Accuracy (Exactitud de Prueba): 73.82%
+  * Test Loss (Pérdida de Prueba): 0.8374
+
+  La exactitud de prueba del modelo refinado es significativamente mayor, pasando de 63.82% a 73.82%. Esto confirma que el modelo tiene mejor eficiencia con datos no vistos. Este resultado es coherente con las métricas de validación
+  
+  La pérdida de prueba ha disminuido notablemente, pasando de 1.1236 a 0.8374, confirmando que el modelo no posee indicios de sobreajuste y demostrando que tiene un mejor rendimiento al modelo inicial.
+
+  ### Reporte de clasificación del modelo refinado
+
+![classRefReport](images/classification_report_refinement.jpg)
+
+* **Apple Pie**
+ * Modelo Inicial:
+  - Precisión: 0.62
+  - Recall: 0.30
+  - F1-Score: 0.40
+ * Modelo Refinado:
+  - Precisión: 0.51
+  - Recall: 0.75
+  - F1-Score: 0.61
+
+* **Baked Potato**
+ * Modelo Inicial:
+  - Precisión: 0.97
+  - Recall: 0.49
+  - F1-Score: 0.65
+ * Modelo Refinado:
+  - Precisión: 0.84
+  - Recall: 0.78
+  - F1-Score: 0.81
+
+* Cheesecake
+ * Modelo Inicial:
+  - Precisión: 0.84
+  - Recall: 0.44
+  - F1-Score: 0.58
+ * Modelo Refinado:
+  - Precisión: 0.95
+  - Recall: 0.42
+  - F1-Score: 0.58
+
+* Chicken Curry
+ * Modelo Inicial:
+  - Precisión: 0.92
+  - Recall: 0.55
+  - F1-Score: 0.69
+ * Modelo Refinado:
+  - Precisión: 0.85
+  - Recall: 0.67
+  - F1-Score: 0.75
+
+* Crispy Chicken
+ * Modelo Inicial:
+  - Precisión: 0.63
+  - Recall: 0.82
+  - F1-Score: 0.71
+ * Modelo Refinado:
+  - Precisión: 0.56
+  - Recall: 0.95
+  - F1-Score: 0.70
+
+* Donut
+ * Modelo Inicial:
+  - Precisión: 0.81
+  - Recall: 0.86
+  - F1-Score: 0.84
+ * Modelo Refinado:
+  - Precisión: 0.84
+  - Recall: 0.92
+  - F1-Score: 0.88
+
+* Fries
+ * Modelo Inicial:
+  - Precisión: 0.87
+  - Recall: 0.82
+  - F1-Score: 0.85
+ * Modelo Refinado:
+  - Precisión: 0.87
+  - Recall: 0.86
+  - F1-Score: 0.86
+
+* Hot Dog
+ * Modelo Inicial:
+  - Precisión: 0.92
+  - Recall: 0.42
+  - F1-Score: 0.58
+ * Modelo Refinado:
+  - Precisión: 0.92
+  - Recall: 0.70
+  - F1-Score: 0.79
+
+* Ice Cream
+ * Modelo Inicial:
+  - Precisión: 0.51
+  - Recall: 0.52
+  - F1-Score: 0.52
+ * Modelo Refinado:
+  - Precisión: 0.66
+  - Recall: 0.58
+  - F1-Score: 0.62
+
+* Omelette
+ * Modelo Inicial:
+  - Precisión: 0.46
+  - Recall: 0.61
+  - F1-Score: 0.52
+ * Modelo Refinado:
+  - Precisión: 0.68
+  - Recall: 0.67
+  - F1-Score: 0.68
+
+* Sandwich
+ * Modelo Inicial:
+  - Precisión: 0.45
+  - Recall: 0.86
+  - F1-Score: 0.59
+ * Modelo Refinado:
+  - Precisión: 0.81
+  - Recall: 0.79
+  - F1-Score: 0.80
+
+* Sushi
+ * Modelo Inicial:
+  - Precisión: 0.54
+  - Recall: 0.76
+  - F1-Score: 0.63
+ * Modelo Refinado:
+  - Precisión: 0.78
+  - Recall: 0.78
+  - F1-Score: 0.78
+
+* Taco
+ * Modelo Inicial:
+  - Precisión: 0.50
+  - Recall: 0.63
+  - F1-Score: 0.56
+ * Modelo Refinado:
+  - Precisión: 0.64
+  - Recall: 0.68
+  - F1-Score: 0.66
+
+### Matriz de Confusión
+
+![confMatrix](images/confusion_matrix.png)
+
+* Apple Pie:
+  * Modelo inicial:
+    * Prediciones correctas: 45
+    * Clasificaciones erróneas: Confundido frecuentemente con "Omelette" (44) y "Sandwich" (15).
+  * Modelo refinado:
+    * Prediciones correctas: 112
+    * Clasificaciones erróneas: Confundido frecuentemente con "Omelette" (10) y "Donut" (7).
+
+* Baked Potato:
+  * Modelo inicial:
+    * Prediciones correctas: 111
+    * Clasificaciones erróneas: Confundido con "Crispy Chicken" (31) y "Taco" (43).
+  * Modelo refinado:
+    * Prediciones correctas: 165
+    * Clasificaciones erróneas: Confundido frecuentemente con "Crispy Chicken" (32) y "Taco" (11).
+
+* Cheesecake:
+  * Modelo inicial:
+    * Prediciones correctas: 66
+    * Clasificaciones erróneas: Confundido con "Ice Cream" (28) y "Sushi" (24).
+  * Modelo refinado:
+    * Prediciones correctas: 63
+    * Clasificaciones erróneas: Confundido frecuentemente con "Apple Pie" (41) y "Ice Cream" (19).
+
+* Chicken Curry:
+  * Modelo inicial:
+    * Prediciones correctas: 82
+    * Clasificaciones erróneas: Confundido con "Omelette" (21) y "Crispy Chicken" (14).
+  * Modelo refinado:
+    * Prediciones correctas: 100
+    * Clasificaciones erróneas: Confundido frecuentemente con "Crispy Chicken" (11) y "Omelette" (10).
+
+* Crispy Chicken:
+  * Modelo inicial:
+    * Prediciones correctas: 185
+    * Clasificaciones erróneas: Confundido con "Sandwich" (16) y "Taco" (11).
+  * Modelo refinado:
+    * Prediciones correctas: 214
+    * Clasificaciones erróneas: Confundido frecuentemente con "Apple Pie" (3) y "Baked Potato" (3).
+
+* Donut:
+  * Modelo inicial:
+    * Prediciones correctas: 193
+    * Clasificaciones erróneas: Confundido con "Sandwich" (5) y "Sushi" (6).
+  * Modelo refinado:
+    * Prediciones correctas: 208
+    * Clasificaciones erróneas: Confundido frecuentemente con "Taco" (3) y "Crispy Chicken" (5).
+
+* French Fries:
+  * Modelo inicial:
+    * Prediciones correctas: 185
+    * Clasificaciones erróneas: Confundido con "Sandwich" (19) y "Taco" (7).
+  * Modelo refinado:
+    * Prediciones correctas: 194
+    * Clasificaciones erróneas: Confundido frecuentemente con "Crispy Chicken" (17) y "Sandwich" (4).
+
+* Hot Dog:
+  * Modelo inicial:
+    * Prediciones correctas: 98
+    * Clasificaciones erróneas: Confundido con "Sandwich" (60) y "Taco" (38).
+  * Modelo refinado:
+    * Prediciones correctas: 162
+    * Clasificaciones erróneas: Confundido frecuentemente con "Taco" (26) y "Sandwich" (14).
+
+* Ice Cream:
+  * Modelo inicial:
+    * Prediciones correctas: 78
+    * Clasificaciones erróneas: Confundido con "Omelette" (14) y "Sushi" (21).
+  * Modelo refinado:
+    * Prediciones correctas: 87
+    * Clasificaciones erróneas: Confundido frecuentemente con "Apple Pie" (18) y "Crispy Chicken" (11).
+
+* Omelette:
+  * Modelo inicial:
+    * Prediciones correctas: 91
+    * Clasificaciones erróneas: Confundido con "Sandwich" (13) y "Crispy Chicken" (16).
+  * Modelo refinado:
+    * Prediciones correctas: 100
+    * Clasificaciones erróneas: Confundido frecuentemente con "Apple Pie" (17) y "Crispy Chicken" (14).
+
+* Sandwich:
+  * Modelo inicial:
+    * Prediciones correctas: 194
+    * Clasificaciones erróneas: Confundido con "Taco" (11) y "Sushi" (4).
+  * Modelo refinado:
+    * Prediciones correctas: 178
+    * Clasificaciones erróneas: Confundido frecuentemente con "Crispy Chicken" (16) y "Taco" (14).
+
+* Sushi:
+  * Modelo inicial:
+    * Prediciones correctas: 114
+    * Clasificaciones erróneas: Confundido con "Taco" (5) y "Sandwich" (11).
+  * Modelo refinado:
+    * Prediciones correctas: 97
+    * Clasificaciones erróneas: Confundido frecuentemente con "Crispy Chicken" (11) y "Taco" (8).
+
+* Taco:
+  * Modelo inicial:
+    * Prediciones correctas: 142
+    * Clasificaciones erróneas: Confundido con "Sandwich" (50) y "Sushi" (10).    
+  * Modelo refinado:
+    * Prediciones correctas: 152
+    * Clasificaciones erróneas: Confundido frecuentemente con "Crispy Chicken" (41) y "Baked Potato" (10).
+
+## Conclusiones de la segunda iteración
+
+El modelo refinado muestra mejoras sustanciales en todas las métricas clave (exactitud y pérdida) tanto en los conjuntos de datos de entrenamiento, validación y prueba. La consistencia entre las métricas de entrenamiento, validación y prueba refuerza la idea de que el modelo refinado es más robusto y confiable.
+
+Asimismo, el modelo refinado muestra una mejora significativa en la clasificación de todas las clases en comparación con el modelo inicial. Las predicciones correctas han aumentado notablemente en cada categoría, y las clasificaciones erróneas se han reducido
+
+Estos resultados sugieren que los refinamientos realizados, como la adición de una capa de Flatten, una capa densa de 512 neuronas, el ajuste de la tasa de aprendizaje y el aumento de los steps per epoch, han sido efectivos para mejorar la capacidad del modelo.
+
 ## :closed_book: Referencias bibliográficas
 
 * [1] Q. Li, W. Cai, X. Wang, Y. Zhou, D.Feng, and M. Chen, “Medical image classification with convolutional neural network,” Dec. 2014, doi: https://doi.org/10.1109/icarcv.2014.7064414.
@@ -279,5 +583,4 @@ El modelo está funcionando de manera razonablemente buena, pero con ajustes y m
 * [3] Dheeb Albashish, Rizik Al-Sayyed, A. Abdullah, Mohammad Hashem Ryalat, and Nedaa Ahmad Almansour, “Deep CNN Model based on VGG16 for Breast Cancer Classification,” Jul. 2021, doi: https://doi.org/10.1109/icit52682.2021.9491631.
 
 * [4] Chiranjibi Sitaula and Mohammad Belayet Hossain, “Attention-based VGG-16 model for COVID-19 chest X-ray image classification,” Applied intelligence, vol. 51, no. 5, pp. 2850–2863, Nov. 2020, doi: https://doi.org/10.1007/s10489-020-02055-x.
-‌
 ‌
