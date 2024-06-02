@@ -347,7 +347,7 @@ Ahora se analizarán los resultados obtenidos en la fase de prueba:
     * Precisión: 0.97
     * Recall: 0.49
     * F1-Score: 0.65
- * Modelo Refinado:
+  * Modelo Refinado:
     * Precisión: 0.84
     * Recall: 0.78
     * F1-Score: 0.81
@@ -357,7 +357,7 @@ Ahora se analizarán los resultados obtenidos en la fase de prueba:
     * Precisión: 0.84
     * Recall: 0.44
     * F1-Score: 0.58
- * Modelo Refinado:
+  * Modelo Refinado:
     * Precisión: 0.95
     * Recall: 0.42
     * F1-Score: 0.58
