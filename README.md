@@ -115,6 +115,8 @@ Una vez que hemos definido la arquitectura del modelo, el siguiente paso crucial
 
   Es una métrica simple y comúnmente utilizada para problemas de clasificación, ya que proporciona una indicación directa de cuán bien está funcionando el modelo en términos de predicción de clases correctas[4].
 
+  Esta arquitectura fue implementada en el archivo de python llamado "model.py".
+
 ![modelCompile](images/model_compile.jpg)
 
 ## :hotsprings: Entrenamiento del modelo
@@ -283,6 +285,8 @@ De igual forma, se usa como base la arquitectura del modelo descrito anteriormen
 * **Learning Rate:** Se modificó el learning rate de 0.0001 a 0.00001.
 
 * **Steps per Epoch:** Se aumentó el número de 30 a 50 para proporcionar más iteraciones en cada época, mejorando la exposición del modelo a los datos de entrenamiento.
+
+Estas modificaciones fueron implementadas en el archivo de python llamado "modelRefinement.py".
 
 ![modelRefSummary](images/model_structure_refinement.jpg)
 
